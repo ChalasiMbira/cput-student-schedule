@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CPUT Student Schedule</title>
+
+  <meta name="description" content="Offline student timetable for CPUT students">
+  <meta name="theme-color" content="#00205C">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="phone-container">
+    <div class="screen">
+
+      <!-- LOGIN -->
+      <div id="login-screen">
+        <div class="login-logo">📚</div>
+        <h1>CPUT Student Schedule</h1>
+        <p>Enter your group or department code</p>
+
+        <input id="login-group-number" placeholder="e.g. IT-23-3">
+        <button id="login-button">
+          <span class="button-text">View Schedule</span>
+          <span class="spinner" style="display:none;"></span>
+        </button>
+
+        <div id="login-message"></div>
+      </div>
+
+      <!-- SCHEDULE -->
+      <div id="schedule-screen" style="display:none">
+        <div class="status-bar">
+          <span id="current-time-status"></span>
+          <span>📶 🔋</span>
+        </div>
+
+        <div class="app-bar">
+          <h1>CPUT</h1>
+          <p>Student Timetable</p>
+        </div>
+
+        <div class="notification" id="app-notification"></div>
+
+        <div class="content">
+          <div class="welcome-section">
+            <div class="welcome-text">Welcome 👋</div>
+            <div class="group-info"></div>
+          </div>
+
+          <div id="day-selector" class="day-selector"></div>
+          <div class="section-title">Classes</div>
+
+          <div id="classes-container">
+            <div class="no-classes">No classes scheduled</div>
+          </div>
+        </div>
+
+        <div class="fab" id="refresh-fab">+</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
